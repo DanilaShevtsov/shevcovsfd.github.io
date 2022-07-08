@@ -34,36 +34,26 @@
 			<div class="wrapper">
 				<div class="parse">
 					<textarea class="abi"></textarea>
-					<button class="btn_parse">Parse</button>
+					<button class="btn_parse" id="btn_parse">Parse</button>
 				</div>
 				<div class="contractAddress">
 					<span>Contract address:</span>
 					<input type="text" class="address">
 				</div>
-				<select name="Function" id="">
-					<option disabled selected>Function</option>
+				<select name="Function" id="function">
+					<option value="function" disabled selected>Function</option>
+
 				</select>
+
 				<div class="argument">
-					<ul>
-						<li>
-							<span>_rate</span>
-							<input type="text" class="var" placeholder="uint256">
-						</li>
-						<li>
-							<span>_aliveUntil</span>
-							<input type="text" class="var" placeholder="uint256">
-						</li>
-						<li>
-							<span>v</span>
-							<input type="text" class="var" placeholder="uint8">
-						</li>
+					<ul class="arguments">
 					</ul>
 				</div>
 			</div>
 		</main>
 	</div>
 
-	<script src="/abiParser.js"></script>
+	<script src="../abiParser.js"></script>
 </body>
 
 </html>
