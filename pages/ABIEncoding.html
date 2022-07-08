@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="static/css/main.min.css">
+	<title>Web3 Helper</title>
+</head>
+
+<body>
+	<div class="container">
+		<h1>
+			<a href="../index.html">Web3 Helper</a>
+		</h1>
+		<hr>
+		<div class="link">
+			<ul>
+				<li>
+					<a href="./ContractInteraction.html">Contract Interaction</a>
+				</li>
+				<li>
+					<a href="./ECDSASignatures.html">ECDSA Signatures</a>
+				</li>
+				<li class="active">
+					<a href="./ABIEncoding.html">ABI Encoding</a>
+				</li>
+
+			</ul>
+			<hr class="vertical">
+		</div>
+		<main>
+			<div class="wrapper">
+				<div class="parse">
+					<textarea class="abi"></textarea>
+					<button class="btn_parse">Parse</button>
+				</div>
+				<select name="Function" id="">
+					<option disabled selected>Function</option>
+				</select>
+				<div class="argument">
+					<ul>
+						<li>
+							<span>_rate</span>
+							<input type="text" class="var" placeholder="uint256">
+						</li>
+						<li>
+							<span>_aliveUntil</span>
+							<input type="text" class="var" placeholder="uint256">
+						</li>
+						<li>
+							<span>v</span>
+							<input type="text" class="var" placeholder="uint8">
+						</li>
+					</ul>
+					<button class="addArgument">Add Argument</button>
+					<button class="btnEncode">Encode</button>
+				</div>
+				<div class="Encoded">
+					<p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quia vel tenetur
+						voluptas error
+						dignissimos praesentium obcaecati aut. Porro vitae repellendus autem hic quasi maxime
+						reprehenderit illo
+						consequuntur, ab obcaecati!</p>
+					<button class="btn_parse">Copy</button>
+				</div>
+			</div>
+		</main>
+	</div>
+
+</body>
+
+</html>

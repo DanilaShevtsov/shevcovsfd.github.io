@@ -1,0 +1,159 @@
+html,
+body
+	margin: 20px 0 10px 0
+	padding: 0
+	background-color: #F5F6F8
+
+a
+	text-decoration: none
+	color: inherit
+
+*
+	box-sizing: border-box
+
+.container
+	display: grid
+	grid-template-columns: 270px minmax(320px, auto)
+	grid-template-areas: "h1 h1" "hr hr" "link main"
+	gap: 0px 20px
+
+h1
+	display: block
+	font-weight: 400
+	font-size: 58px
+	margin: 0 auto
+	grid-area: h1
+
+.link
+	display: grid
+	grid-auto-columns: auto 10px
+	grid-area: link
+	grid-template-areas: "ul hr"
+	ul
+		grid-area: ul
+		padding: 0px
+		margin: 0 10px
+	hr
+		grid-area: hr
+		width: 2px
+		height: 100%
+
+li
+	font-size: 28px
+	margin-top: 15px
+	list-style-type: none
+
+hr
+	grid-area: hr
+	width: 100%
+	height: 2px
+	margin: 0
+
+main
+	grid-area: main
+	.wrapper
+		display: grid
+		margin-top: 15px
+		gap: 40px 0px
+		.parse
+			display: flex
+			justify-content: start
+			align-items: center
+			.abi
+				height: 25vh
+				width: 60vw
+				resize: none
+				font-size: 20px
+				padding: 10px
+				margin-right: 20px
+			.btn_parse
+				height: 7vh
+				padding: 5px 20px
+				font-size: 25px
+				cursor: pointer
+
+		.contractAddress
+			display: flex
+			justify-content: start
+			align-items: center
+			span
+				font-size: 30px
+				margin-right: 20px
+			.address
+				width: 45vw
+				resize: none
+				font-size: 20px
+				padding: 2px
+		select
+			width: 150px
+			font-size: 25px
+			justify-self: center
+			margin-right: 240px
+
+		.argument
+			display: grid
+			ul
+				padding: 0
+				li
+					display: flex
+					span
+						font-size: 30px
+						margin-right: 20px
+						width: 200px
+					.var
+						width: 45vw
+						resize: none
+						font-size: 20px
+						padding: 2px
+			.addArgument
+				justify-self: start
+			.btnEncode
+				justify-self: center
+			select
+				width: 150px
+				font-size: 25px
+				margin-right: 25px
+
+		.Encoded
+			display: flex
+			justify-content: start
+			align-items: center
+			p
+				width: 60vw
+				font-size: 24px
+				margin-right: 20px
+
+button
+	height: 7vh
+	padding: 5px 20px
+	font-size: 25px
+	cursor: pointer
+
+.active
+	color: #00B2FF
+
+@media (max-width: 1080px)
+	.container
+		grid-template-columns: minmax(320px, 1fr)
+		grid-template-areas: "h1" "hr" "main"
+	.wrapper
+		margin: 0px 20px
+	.link
+		display: none
+
+	main
+		.wrapper
+			.parse
+				.abi
+					width: 80vw
+			select
+				margin-right: 0px
+
+@media (max-width: 750px)
+	main
+		.wrapper
+			.parse
+				.abi
+					width: 65vw
+			select
+				margin-right: 0px
