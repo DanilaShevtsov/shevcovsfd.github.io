@@ -11,6 +11,7 @@ document.getElementById("btn_parse").onclick = () => {
 }
 
 let select = document.getElementById("function").addEventListener('change', function () {
+	clearArgs()
 	addArgument(this.value)
 });
 
@@ -68,7 +69,7 @@ const parseFuncs = function (abi) {
 	return funcs
 }
 
-function addFunction(names) {
+const addFunction = function(names) {
 	const select = document.getElementById('function');
 	names.map(e => {
 		const option = select.appendChild(document.createElement('option'))
@@ -78,7 +79,7 @@ function addFunction(names) {
 	)
 }
 
-function addArgument(func) {
+const addArgument = function(func) {
 	variables = parsedAbiFuncs[func]
 	variables.inputs.map(e => {
 		let li = document.createElement('li');
@@ -88,10 +89,9 @@ function addArgument(func) {
 
 
 		document.querySelector('.arguments').appendChild(li)
-	}
-	)
-
+	})
 }
 
-// var parsedABI = parse(abi);
-// console.log(parsedABI.funcs[parsedABI.names[0]])
+const clearArgs = function() {
+	document.querySelector('.arguments').innerHTML = "";
+}
