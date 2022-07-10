@@ -33,7 +33,7 @@
 		<main>
 			<div class="wrapper">
 				<div class="parse">
-					<textarea class="abi"></textarea>
+					<textarea class="abi" placeholder="ABI"></textarea>
 					<button class="btn_parse" id="btn_parse">Parse</button>
 				</div>
 				<div class="contractAddress">
@@ -51,14 +51,19 @@
 				</div>
 			</div>
 
-			<div class="send">
-				<button class="btn_send" id="btn_send">Send</button>
+			<div class="send" visibility = "hidden">
+				<button class="btn_send" id="btn_send" style="visibility: hidden;"></button>
+			</div>
+
+			<div class="output">
+				<ul class="outputs">
+				</ul>
 			</div>
 		</main>
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-	<script type = "module" src="../scripts/processor.js"></script>
-	<script src="../scripts/abiParser.js"></script>
+	<script type = "module" src="../scripts/contractinteraction.js"></script>
+	<script src="../scripts/abiparser.js"></script>
 	<script src="../scripts/metamask.js"></script>
 </body>
 
