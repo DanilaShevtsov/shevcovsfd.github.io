@@ -34,54 +34,35 @@
 			<div class="wrapper">
 
 				<div class="argument">
-					<ul>
-						<li>
-							<select name="Type" id="">
-								<option disabled selected>Type</option>
-							</select>
-							<input type="text" class="var">
-						</li>
-						<li>
-							<select name="Type" id="">
-								<option disabled selected>Type</option>
-							</select>
-							<input type="text" class="var">
-							<span>x</span>
-						</li>
-						<li>
-							<select name="Type" id="">
-								<option disabled selected>Type</option>
-							</select>
-							<input type="text" class="var">
-							<span>x</span>
-						</li>
-					</ul>
-					<button class="addArgument">Add Argument</button>
-					<button class="btnEncode">Encode</button>
+					<ul class="arguments"></ul>
+					<button class="addArgument" id="addArgument">Add Argument</button>
+					<button class="btnEncode" id="btnSign">Sign</button>
 
 					<ul>
 						<li>
 							<span>v:</span>
-							<span>23958739850</span>
+							<span id="v"></span>
 						</li>
 						<li>
 							<span>r:</span>
-							<span></span>
+							<span id="r"></span>
 						</li>
 						<li>
 							<span>s:</span>
-							<span></span>
+							<span id="s"></span>
 						</li>
 						<li>
 							<span>signature:</span>
-							<span>23958739850</span>
+							<span id="signature"></span>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</main>
 	</div>
-
+	<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+	<script src="../scripts/ecdsasignatures.js"></script>
+	<script src="../scripts/metamask.js"></script>
 </body>
 
 </html>

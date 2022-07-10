@@ -1,14 +1,13 @@
-
 const parse = function (abi) {
-	const jsonABI = JSON.parse(abi);
-	const funcObjs = takeFunctions(jsonABI);
-	const names = onlyNames(funcObjs);
-	const funcs = parseFuncs(funcObjs);
+	var jsonABI = JSON.parse(abi);
+	jsonABI = findFuncs(jsonABI);
+	const names = onlyNames(jsonABI);
+	const funcs = parseFuncs(jsonABI);
 
 	return { names, funcs }
 }
 
-const takeFunctions = function (abi) {
+const findFuncs = function (abi) {
 	var funcs = [];
 	for (let i = 0; i < abi.length; i++) {
 		var obj = abi[i];
@@ -38,19 +37,22 @@ const parseFuncs = function (abi) {
 		var obj = abi[i];
 		var name = obj["name"];
 		var inputs = obj["inputs"];
+		var outputs = obj["outputs"]
 		var type = obj["stateMutability"];
 		
 		for (let argId = 0; argId < inputs.length; argId++) {
 			if (inputs[argId].name == "") {
-				inputs[argId].name = "argument" + argId
+				inputs[argId].name = "input"
 			}
 		}
 
-		var func = {
-			inputs: inputs,
-			type: type
+		for (let argId = 0; argId < outputs.length; argId++) {
+			if (outputs[argId].name == "") {
+				outputs[argId].name = "output"
+			}
 		}
 
+		var func = {inputs: inputs, type: type, outputs: outputs}
 		funcs[name] = func
 	}
 	
