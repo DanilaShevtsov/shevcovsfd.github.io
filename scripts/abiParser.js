@@ -12,15 +12,15 @@ const findFuncs = function (abi) {
 	for (let i = 0; i < abi.length; i++) {
 		var obj = abi[i];
 		if (obj["type"] == 'function') {
-			funcs.push(obj)
+			funcs.push(obj);
 		}
 	}
 
-	return funcs
+	return funcs;
 }
 
 const onlyNames = function (abi) {
-	var names = []
+	var names = [];
 	
 	for (let i = 0; i < abi.length; i++) {
 		var obj = abi[i];
@@ -31,30 +31,30 @@ const onlyNames = function (abi) {
 }
 
 const parseFuncs = function (abi) {
-	var funcs = {}
+	var funcs = {};
 	
 	for (let i = 0; i < abi.length; i++) {
 		var obj = abi[i];
 		var name = obj["name"];
 		var inputs = obj["inputs"];
-		var outputs = obj["outputs"]
+		var outputs = obj["outputs"];
 		var type = obj["stateMutability"];
 		
 		for (let argId = 0; argId < inputs.length; argId++) {
 			if (inputs[argId].name == "") {
-				inputs[argId].name = "input"
+				inputs[argId].name = "input";
 			}
 		}
 
 		for (let argId = 0; argId < outputs.length; argId++) {
 			if (outputs[argId].name == "") {
-				outputs[argId].name = "output"
+				outputs[argId].name = "output";
 			}
 		}
 
-		var func = {inputs: inputs, type: type, outputs: outputs}
-		funcs[name] = func
+		var func = {inputs: inputs, type: type, outputs: outputs};
+		funcs[name] = func;
 	}
 	
-	return funcs
+	return funcs;
 }
