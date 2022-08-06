@@ -46,8 +46,14 @@ const valueslistFromUl = function(ul) {
     var values = [];
     for (let i = 0; i < ul.length; i++) {
         var li = ul.item(i);
-        var type = li.children[1].value;
-        values.push(type)
+        var type = li.children[0].value;
+        var value = li.children[1].value;
+        if (type.slice(-2) == '[]') {
+            value = value.replace('[', '');
+            value = value.replace(']', '');
+            value = value.split(',');
+        }
+        values.push(value)
     }
     
     return values

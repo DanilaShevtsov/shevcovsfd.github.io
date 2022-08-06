@@ -9,9 +9,9 @@ let parsedABI;
 let parsedAbiFuncs;
 
 document.getElementById("btn_parse").onclick = () => {
-	var abi = document.querySelector(abiField).value
-	parsedABI = parse(abi)
-	parsedAbiFuncs = parsedABI.funcs
+	var abi = document.querySelector(abiField).value;
+	parsedABI = parse(abi);
+	parsedAbiFuncs = parsedABI.funcs;
 	clearFunctions()
 	addFunction(["function..."])
 	addFunction(parsedABI.names)
@@ -100,6 +100,12 @@ const getParams = function(args) {
     
     for (let i = 0; i < args.length; i++) {
         var value = document.getElementById(args[i].name).value;
+		var type = args[i].type;
+		if (type.slice(-2) == '[]') {
+            value = value.replace('[', '');
+            value = value.replace(']', '');
+            value = value.split(',');
+        }
         values.push(value)
     }
 

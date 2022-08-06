@@ -22,10 +22,3 @@ window.addEventListener('load', async () => {
         return web3;
     }
 })
-
-// const encode = function(func) {    
-//     console.log(func)
-//     return web3.eth.abi.encodeFunctionSignature(func);
-// }
-
-// export { encode }
